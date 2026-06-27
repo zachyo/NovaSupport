@@ -110,6 +110,7 @@ model Milestone {
   targetAmount  Decimal  @db.Decimal(18, 7)
   currentAmount Decimal  @db.Decimal(18, 7) @default(0)
   assetCode     String   @default("XLM")
+  assetIssuer   String?
   status        String   @default("active")
   profileId     String
   createdAt     DateTime @default(now())

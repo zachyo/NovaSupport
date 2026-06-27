@@ -3135,6 +3135,7 @@ All errors return JSON with an \`error\` field and optional \`code\`:
               where: {
                 profileId: parsed.data.profileId,
                 assetCode: parsed.data.assetCode,
+                assetIssuer: parsed.data.assetIssuer ?? null,
                 status: "active",
               },
             });
