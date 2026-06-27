@@ -101,7 +101,12 @@ function decodeSupportEvent(event: RpcEvent): SupportEventRecord | null {
     pagingToken: event.pagingToken ?? event.id,
     amount: String(nativeObj.amount ?? "0"),
     assetCode: String(nativeObj.asset_code ?? nativeObj.assetCode ?? ""),
-    assetIssuer: null,
+    assetIssuer:
+      nativeObj.asset_issuer != null
+        ? String(nativeObj.asset_issuer)
+        : nativeObj.assetIssuer != null
+          ? String(nativeObj.assetIssuer)
+          : null,
     recipientAddress: asAddress(recipient),
     supporterAddress: asAddress(supporter),
     message: nativeObj.message == null ? null : String(nativeObj.message),

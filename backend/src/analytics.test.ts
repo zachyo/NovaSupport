@@ -256,7 +256,7 @@ describe("Analytics Tests", () => {
         (a: any) => a.asset === "XLM",
       );
       assert.ok(xlmBreakdown);
-      assert.strictEqual(xlmBreakdown.amount, 500); // 100+50+200+150
+      assert.strictEqual(xlmBreakdown.amount, "500"); // 100+50+200+150
       assert.strictEqual(xlmBreakdown.count, 4);
     });
 
